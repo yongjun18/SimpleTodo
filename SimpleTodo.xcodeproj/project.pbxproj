@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		580A8DA6297BD9D48DAD4937 /* Pods_SimpleTodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 746E4DD8C45F1D62EBD37408 /* Pods_SimpleTodo.framework */; };
+		D0144A3A2A306E56004A6457 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0144A392A306E56004A6457 /* CalendarView.swift */; };
+		D0144A3C2A306E80004A6457 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0144A3B2A306E80004A6457 /* CalendarViewModel.swift */; };
 		D06BBBD72A305CD7006F35B1 /* SimpleTodoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06BBBD62A305CD7006F35B1 /* SimpleTodoApp.swift */; };
 		D06BBBD92A305CD7006F35B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06BBBD82A305CD7006F35B1 /* ContentView.swift */; };
 		D06BBBDB2A305CD8006F35B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D06BBBDA2A305CD8006F35B1 /* Assets.xcassets */; };
@@ -18,6 +20,8 @@
 		462987FCEBFCA8961494E335 /* Pods-SimpleTodo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleTodo.debug.xcconfig"; path = "Target Support Files/Pods-SimpleTodo/Pods-SimpleTodo.debug.xcconfig"; sourceTree = "<group>"; };
 		61F4F7E34D44836D0F4DE96F /* Pods-SimpleTodo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleTodo.release.xcconfig"; path = "Target Support Files/Pods-SimpleTodo/Pods-SimpleTodo.release.xcconfig"; sourceTree = "<group>"; };
 		746E4DD8C45F1D62EBD37408 /* Pods_SimpleTodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleTodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0144A392A306E56004A6457 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		D0144A3B2A306E80004A6457 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		D06BBBD32A305CD7006F35B1 /* SimpleTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D06BBBD62A305CD7006F35B1 /* SimpleTodoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTodoApp.swift; sourceTree = "<group>"; };
 		D06BBBD82A305CD7006F35B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -43,8 +47,30 @@
 				462987FCEBFCA8961494E335 /* Pods-SimpleTodo.debug.xcconfig */,
 				61F4F7E34D44836D0F4DE96F /* Pods-SimpleTodo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D0144A2D2A3060A5004A6457 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D0144A2E2A3060AE004A6457 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D0144A3B2A306E80004A6457 /* CalendarViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D0144A2F2A3060BA004A6457 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D0144A392A306E56004A6457 /* CalendarView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D06BBBCA2A305CD7006F35B1 = {
@@ -68,6 +94,9 @@
 		D06BBBD52A305CD7006F35B1 /* SimpleTodo */ = {
 			isa = PBXGroup;
 			children = (
+				D0144A2F2A3060BA004A6457 /* View */,
+				D0144A2E2A3060AE004A6457 /* ViewModel */,
+				D0144A2D2A3060A5004A6457 /* Model */,
 				D06BBBD62A305CD7006F35B1 /* SimpleTodoApp.swift */,
 				D06BBBD82A305CD7006F35B1 /* ContentView.swift */,
 				D06BBBDA2A305CD8006F35B1 /* Assets.xcassets */,
@@ -207,7 +236,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D06BBBD92A305CD7006F35B1 /* ContentView.swift in Sources */,
+				D0144A3A2A306E56004A6457 /* CalendarView.swift in Sources */,
 				D06BBBD72A305CD7006F35B1 /* SimpleTodoApp.swift in Sources */,
+				D0144A3C2A306E80004A6457 /* CalendarViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
