@@ -21,8 +21,12 @@ struct CalendarViewRepresentable: UIViewRepresentable {
         calendar.calendarHeaderView.isHidden = true
         calendar.headerHeight = 0
         
-        // weekday 컬러 #888888
-        calendar.appearance.weekdayTextColor = UIColor(red: 136/255.0, green: 136/255.0, blue: 136/255.0, alpha: 1.0)
+        // weekday view 커스텀
+        calendar.appearance.weekdayTextColor = UIColor(red: 136/255.0, green: 136/255.0, blue: 136/255.0, alpha: 1.0) // #888888
+        calendar.appearance.weekdayFont = UIFont.systemFont(ofSize: 12)
+        
+        // 날짜 텍스트 폰트 설정
+        calendar.appearance.titleFont = UIFont.systemFont(ofSize: 12)
         
         return calendar
     }
