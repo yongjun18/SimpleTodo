@@ -14,10 +14,16 @@ struct CalendarViewRepresentable: UIViewRepresentable {
     
     func makeUIView(context: Context) -> some UIView {
         let calendar = FSCalendar()
-        
-
         calendar.dataSource = datasource
         calendar.delegate = delegate
+        
+        // header 숨기기
+        calendar.calendarHeaderView.isHidden = true
+        calendar.headerHeight = 0
+        
+        // weekday 컬러 #888888
+        calendar.appearance.weekdayTextColor = UIColor(red: 136/255.0, green: 136/255.0, blue: 136/255.0, alpha: 1.0)
+        
         return calendar
     }
     
