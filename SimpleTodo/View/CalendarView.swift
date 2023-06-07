@@ -35,8 +35,34 @@ struct CalendarViewRepresentable: UIViewRepresentable {
 struct CalendarView: View {
     var body: some View {
         GeometryReader { proxy in
-            CalendarViewRepresentable()
-                .frame(width: proxy.size.width, height: 400)
+            VStack(spacing: 0) {
+                HStack {
+                    Text("2023. 06")
+                        .font(.system(size: 16, weight: .semibold))
+                        .padding(EdgeInsets(top: 0, leading: 3, bottom: 0, trailing: 0))
+                    Spacer()
+                    Button(action: {
+                        
+                    }, label:{
+                        Image(systemName: "chevron.left")
+                            .font(.system(size: 16))
+                            .frame(width: 24, height: 24)
+                            .foregroundColor(Color.black)
+                    })
+                    Button(action: {
+                        
+                    }, label:{
+                        Image(systemName: "chevron.right")
+                            .font(.system(size: 16))
+                            .frame(width: 24, height: 24)
+                            .foregroundColor(Color.black)
+                    })
+                }
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0))
+                
+                CalendarViewRepresentable()
+                    .frame(width: proxy.size.width, height: 350)
+            }
         }
     }
 }
