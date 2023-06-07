@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		580A8DA6297BD9D48DAD4937 /* Pods_SimpleTodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 746E4DD8C45F1D62EBD37408 /* Pods_SimpleTodo.framework */; };
 		D06BBBD72A305CD7006F35B1 /* SimpleTodoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06BBBD62A305CD7006F35B1 /* SimpleTodoApp.swift */; };
 		D06BBBD92A305CD7006F35B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06BBBD82A305CD7006F35B1 /* ContentView.swift */; };
 		D06BBBDB2A305CD8006F35B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D06BBBDA2A305CD8006F35B1 /* Assets.xcassets */; };
@@ -14,6 +15,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		462987FCEBFCA8961494E335 /* Pods-SimpleTodo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleTodo.debug.xcconfig"; path = "Target Support Files/Pods-SimpleTodo/Pods-SimpleTodo.debug.xcconfig"; sourceTree = "<group>"; };
+		61F4F7E34D44836D0F4DE96F /* Pods-SimpleTodo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleTodo.release.xcconfig"; path = "Target Support Files/Pods-SimpleTodo/Pods-SimpleTodo.release.xcconfig"; sourceTree = "<group>"; };
+		746E4DD8C45F1D62EBD37408 /* Pods_SimpleTodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleTodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D06BBBD32A305CD7006F35B1 /* SimpleTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D06BBBD62A305CD7006F35B1 /* SimpleTodoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTodoApp.swift; sourceTree = "<group>"; };
 		D06BBBD82A305CD7006F35B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -26,17 +30,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				580A8DA6297BD9D48DAD4937 /* Pods_SimpleTodo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CAAD54783A32EC8D63EAAE8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				462987FCEBFCA8961494E335 /* Pods-SimpleTodo.debug.xcconfig */,
+				61F4F7E34D44836D0F4DE96F /* Pods-SimpleTodo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D06BBBCA2A305CD7006F35B1 = {
 			isa = PBXGroup;
 			children = (
 				D06BBBD52A305CD7006F35B1 /* SimpleTodo */,
 				D06BBBD42A305CD7006F35B1 /* Products */,
+				0CAAD54783A32EC8D63EAAE8 /* Pods */,
+				DB8047AF92B138B776800FF7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +84,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		DB8047AF92B138B776800FF7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				746E4DD8C45F1D62EBD37408 /* Pods_SimpleTodo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D06BBBE12A305CD8006F35B1 /* Build configuration list for PBXNativeTarget "SimpleTodo" */;
 			buildPhases = (
+				00716113F54B54B75C03A05A /* [CP] Check Pods Manifest.lock */,
 				D06BBBCF2A305CD7006F35B1 /* Sources */,
 				D06BBBD02A305CD7006F35B1 /* Frameworks */,
 				D06BBBD12A305CD7006F35B1 /* Resources */,
+				A0733F6C1DBF2EFBDF0DC1F4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00716113F54B54B75C03A05A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SimpleTodo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0733F6C1DBF2EFBDF0DC1F4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SimpleTodo/Pods-SimpleTodo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SimpleTodo/Pods-SimpleTodo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SimpleTodo/Pods-SimpleTodo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D06BBBCF2A305CD7006F35B1 /* Sources */ = {
@@ -261,6 +330,7 @@
 		};
 		D06BBBE22A305CD8006F35B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 462987FCEBFCA8961494E335 /* Pods-SimpleTodo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -290,6 +360,7 @@
 		};
 		D06BBBE32A305CD8006F35B1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61F4F7E34D44836D0F4DE96F /* Pods-SimpleTodo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
