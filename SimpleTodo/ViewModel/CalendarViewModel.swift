@@ -35,6 +35,9 @@ class CalendarCustom {
     }
     
     static func custom(_ calendar: FSCalendar) {
+        // locale 한국으로 설정
+        calendar.locale = Locale(identifier: "ko_KR")
+        
         // header 숨기기
         calendar.calendarHeaderView.isHidden = true
         calendar.headerHeight = headerHeight
