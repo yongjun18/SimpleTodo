@@ -15,3 +15,36 @@ class CalendarDelegate: NSObject, FSCalendarDelegate {
 class CalendarDataSource: NSObject, FSCalendarDataSource {
     
 }
+
+class CalendarCustom {
+    public static let padding = 5.0             // FSCalendar 라이브러리에 정의된 padding 값
+    public static let headerHeight = 0.0        // header 사용하지 않음
+    public static let weekdayHeight = 24.0      // weeday view height
+    public static let designedCellHeight = 52.0 // 디자인 상의 cell height
+    public static let designedCellWidth = 42.0  // 디자인 상의 cell width
+    
+    // 디자인 된 셀의 비율을 유지하기 위해, 세팅해야할 calendar height 계산
+    static func computeCalendarHeight(width: Double) -> Double {
+        let cellWidth = width/7
+        
+        // _preferredRowHeight = (self.transitionCoordinator.cachedMonthSize.height-headerHeight-weekdayHeight-padding*2)/6.0
+        // _preferredRowHeight/cellWidth == designedCellHeight/designedCellWidth
+        // cachedMonthSize는 아래 식으로 계산
+        return (designedCellHeight / designedCellWidth) * cellWidth * 6
+            + headerHeight + weekdayHeight + padding*2
+    }
+    
+    static func custom(_ calendar: FSCalendar) {
+        // header 숨기기
+        calendar.calendarHeaderView.isHidden = true
+        calendar.headerHeight = headerHeight
+        
+        // weekday view 커스텀
+        calendar.appearance.weekdayTextColor = UIColor(red: 136/255.0, green: 136/255.0, blue: 136/255.0, alpha: 1.0) // #888888
+        calendar.appearance.weekdayFont = UIFont.systemFont(ofSize: 12)
+        calendar.weekdayHeight = weekdayHeight
+        
+        // 날짜 텍스트 폰트 설정
+        calendar.appearance.titleFont = UIFont.systemFont(ofSize: 12)
+    }
+}
