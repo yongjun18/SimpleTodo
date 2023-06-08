@@ -8,11 +8,7 @@
 import Foundation
 import FSCalendar
 
-class CalendarDelegate: NSObject, FSCalendarDelegate {
-    
-}
-
-class CalendarDataSource: NSObject, FSCalendarDataSource {
+class CalendarViewModel: NSObject, FSCalendarDelegate, FSCalendarDataSource {
     
 }
 

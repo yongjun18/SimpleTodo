@@ -9,14 +9,13 @@ import SwiftUI
 import FSCalendar
 
 struct CalendarViewRepresentable: UIViewRepresentable {
+    var calendarViewModel = CalendarViewModel()
     
     func makeUIView(context: Context) -> some UIView {
         let calendar = FSCalendar()
-        let datasource = CalendarDataSource()
-        let delegate = CalendarDelegate()
         
-        calendar.dataSource = datasource
-        calendar.delegate = delegate
+        calendar.dataSource = calendarViewModel
+        calendar.delegate = calendarViewModel
         
         CalendarCustom.custom(calendar)
         return calendar
