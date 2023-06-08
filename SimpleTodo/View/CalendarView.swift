@@ -18,6 +18,10 @@ struct CalendarViewRepresentable: UIViewRepresentable {
         calendar.delegate = calendarViewModel
         calendar.register(CalendarCell.self, forCellReuseIdentifier: "cell")
         
+        // 오늘 날짜 색상, 선택 날짜 색상을 디폴트 색상으로
+        calendar.appearance.titleTodayColor = nil
+        calendar.appearance.titleSelectionColor = nil
+        
         CalendarCustom.custom(calendar)
         return calendar
     }

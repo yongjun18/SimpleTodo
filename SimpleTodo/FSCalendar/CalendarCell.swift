@@ -29,6 +29,9 @@ class CalendarCell: FSCalendarCell {
         
         self.contentView.insertSubview(selectIndicatorView, at: 0)
         self.selectIndicatorView = selectIndicatorView
+        
+        // 날짜 선택 시 나타나는 원형 효과 제거
+        self.shapeLayer.isHidden = true
     }
     
     override func layoutSubviews() {
