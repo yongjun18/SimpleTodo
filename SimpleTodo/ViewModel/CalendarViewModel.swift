@@ -10,6 +10,11 @@ import FSCalendar
 
 class CalendarViewModel: NSObject, FSCalendarDelegate, FSCalendarDataSource {
     
+    // MARK:- FSCalendarDataSource
+    func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
+        let cell = calendar.dequeueReusableCell(withIdentifier: "cell", for: date, at: position)
+        return cell
+    }
 }
 
 class CalendarCustom {

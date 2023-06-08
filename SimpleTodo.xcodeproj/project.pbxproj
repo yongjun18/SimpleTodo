@@ -14,6 +14,7 @@
 		D06BBBD92A305CD7006F35B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06BBBD82A305CD7006F35B1 /* ContentView.swift */; };
 		D06BBBDB2A305CD8006F35B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D06BBBDA2A305CD8006F35B1 /* Assets.xcassets */; };
 		D06BBBDE2A305CD8006F35B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D06BBBDD2A305CD8006F35B1 /* Preview Assets.xcassets */; };
+		D0C443D42A319AC300D2F6BE /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C443D32A319AC300D2F6BE /* CalendarCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		D06BBBD82A305CD7006F35B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D06BBBDA2A305CD8006F35B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D06BBBDD2A305CD8006F35B1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D0C443D32A319AC300D2F6BE /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		D06BBBD52A305CD7006F35B1 /* SimpleTodo */ = {
 			isa = PBXGroup;
 			children = (
+				D0C443D22A319A7E00D2F6BE /* FSCalendar */,
 				D0144A2F2A3060BA004A6457 /* View */,
 				D0144A2E2A3060AE004A6457 /* ViewModel */,
 				D0144A2D2A3060A5004A6457 /* Model */,
@@ -111,6 +114,14 @@
 				D06BBBDD2A305CD8006F35B1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D0C443D22A319A7E00D2F6BE /* FSCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				D0C443D32A319AC300D2F6BE /* CalendarCell.swift */,
+			);
+			path = FSCalendar;
 			sourceTree = "<group>";
 		};
 		DB8047AF92B138B776800FF7 /* Frameworks */ = {
@@ -239,6 +250,7 @@
 				D0144A3A2A306E56004A6457 /* CalendarView.swift in Sources */,
 				D06BBBD72A305CD7006F35B1 /* SimpleTodoApp.swift in Sources */,
 				D0144A3C2A306E80004A6457 /* CalendarViewModel.swift in Sources */,
+				D0C443D42A319AC300D2F6BE /* CalendarCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

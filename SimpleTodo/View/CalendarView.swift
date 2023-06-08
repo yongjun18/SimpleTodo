@@ -16,6 +16,7 @@ struct CalendarViewRepresentable: UIViewRepresentable {
         
         calendar.dataSource = calendarViewModel
         calendar.delegate = calendarViewModel
+        calendar.register(CalendarCell.self, forCellReuseIdentifier: "cell")
         
         CalendarCustom.custom(calendar)
         return calendar
