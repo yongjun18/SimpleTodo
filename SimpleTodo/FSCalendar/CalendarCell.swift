@@ -13,7 +13,7 @@ class CalendarCell: FSCalendarCell {
     
     var sizeRatio: Double = 0.85
     var cornerRatio: Double = 0.06538
-    var shadowRatio: Double = 0.05
+    var shadowRatio: Double = 0.045
  
     required init!(coder aDecoder: NSCoder!) {
         fatalError("init(coder:) has not been implemented")
@@ -31,7 +31,7 @@ class CalendarCell: FSCalendarCell {
         
         // 그림자 설정
         selectIndicatorView.layer.shadowOffset = CGSize(width: 0, height: 0)
-        selectIndicatorView.layer.shadowOpacity = 0.16
+        selectIndicatorView.layer.shadowOpacity = 0.25
         selectIndicatorView.layer.shadowRadius = frame.height * shadowRatio
         
         self.contentView.insertSubview(selectIndicatorView, at: 1)
