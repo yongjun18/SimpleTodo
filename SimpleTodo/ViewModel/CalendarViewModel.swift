@@ -16,6 +16,29 @@ class CalendarViewModel: NSObject, FSCalendarDelegate, FSCalendarDataSource {
         if monthPosition == .next || monthPosition == .previous {
             calendar.setCurrentPage(date, animated: true)
         }
+        
+        if let cell = calendar.cell(for: date, at: monthPosition) as? CalendarCell {
+            cell.selectIndicatorView.isHidden = false
+        }
+    }
+    
+    func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        if let cell = calendar.cell(for: date, at: monthPosition) as? CalendarCell {
+            cell.selectIndicatorView.isHidden = true
+        }
+        
+    }
+    
+    func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at monthPosition: FSCalendarMonthPosition) {
+        if let calendarCell = cell as? CalendarCell {
+            // 선택 여부에 따라 selectedIndicator 히든 설정 변경
+            if date == calendar.selectedDate {
+                calendarCell.selectIndicatorView.isHidden = false
+            }
+            else {
+                calendarCell.selectIndicatorView.isHidden = true
+            }
+        }
     }
     
     // MARK:- FSCalendarDataSource

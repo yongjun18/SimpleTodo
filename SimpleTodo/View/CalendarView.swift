@@ -23,6 +23,7 @@ struct CalendarViewRepresentable: UIViewRepresentable {
         calendar.appearance.titleSelectionColor = nil
         
         CalendarCustom.custom(calendar)
+        calendar.select(Date())
         return calendar
     }
     
