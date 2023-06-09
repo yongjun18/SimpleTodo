@@ -12,7 +12,7 @@ class CalendarCell: FSCalendarCell {
     weak var selectIndicatorView: UIView!
     
     var sizeRatio: Double = 0.85
-    var cornerRatio: Double = 0.1
+    var cornerRatio: Double = 0.06538
     var shadowRatio: Double = 0.05
  
     required init!(coder aDecoder: NSCoder!) {
