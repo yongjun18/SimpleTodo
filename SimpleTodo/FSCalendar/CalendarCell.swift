@@ -23,10 +23,7 @@ class CalendarCell: FSCalendarCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        let selectIndicatorView = UIView(frame: CGRect(x: frame.width * (1.0-sizeRatio) * 0.5,
-                                                       y: frame.height * (1.0-sizeRatio) * 0.5,
-                                                       width: frame.width * sizeRatio,
-                                                       height: frame.height * sizeRatio))
+        let selectIndicatorView = UIView(frame: CGRectZero)
         selectIndicatorView.backgroundColor = UIColor(.white)
         
         // 그림자 설정
@@ -47,7 +44,7 @@ class CalendarCell: FSCalendarCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        self.selectIndicatorView.bounds = CGRect(x: frame.width * (1.0-sizeRatio) * 0.5,
+        self.selectIndicatorView.frame = CGRect(x: frame.width * (1.0-sizeRatio) * 0.5,
                                                  y: frame.height * (1.0-sizeRatio) * 0.5,
                                                  width: frame.width * sizeRatio,
                                                  height: frame.height * sizeRatio)
