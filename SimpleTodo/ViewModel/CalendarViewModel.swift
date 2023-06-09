@@ -49,11 +49,12 @@ class CalendarViewModel: NSObject, FSCalendarDelegate, FSCalendarDataSource {
 }
 
 class CalendarCustom {
-    public static let padding = 5.0             // FSCalendar 라이브러리에 정의된 padding 값
-    public static let headerHeight = 0.0        // header 사용하지 않음
-    public static let weekdayHeight = 24.0      // weeday view height
-    public static let designedCellHeight = 52.0 // 디자인 상의 cell height
-    public static let designedCellWidth = 42.0  // 디자인 상의 cell width
+    public static let padding = 5.0                     // FSCalendar 라이브러리에 정의된 padding 값
+    public static let headerHeight = 0.0                // header 사용하지 않음
+    public static let weekdayHeight = 24.0              // weeday view height
+    public static let designedCellHeight = 52.0         // 디자인 상의 cell height
+    public static let designedCellWidth = 42.0          // 디자인 상의 cell width
+    public static let designedTitleLabelHeight = 40.0   // 디자인 상의 title label height
     
     // 디자인 된 셀의 비율을 유지하기 위해, 세팅해야할 calendar height 계산
     static func computeCalendarHeight(width: Double) -> Double {

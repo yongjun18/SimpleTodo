@@ -37,6 +37,12 @@ class CalendarCell: FSCalendarCell {
         self.contentView.insertSubview(selectIndicatorView, at: 1)
         self.selectIndicatorView = selectIndicatorView
         
+        self.titleLabel.frame = CGRect(x: selectIndicatorView.frame.origin.x,
+                                       y: selectIndicatorView.frame.origin.y,
+                                       width: selectIndicatorView.frame.width,
+                                       height: selectIndicatorView.frame.height * (CalendarCustom.designedTitleLabelHeight / CalendarCustom.designedCellHeight))
+        
+        
         // 날짜 선택 시 나타나는 원형 효과 제거
         self.shapeLayer.isHidden = true
     }
@@ -50,5 +56,10 @@ class CalendarCell: FSCalendarCell {
                                                  height: frame.height * sizeRatio)
         self.selectIndicatorView.layer.cornerRadius = frame.height * cornerRatio
         selectIndicatorView.layer.shadowRadius = frame.height * shadowRatio
+        
+        self.titleLabel.frame = CGRect(x: selectIndicatorView.frame.origin.x,
+                                       y: selectIndicatorView.frame.origin.y,
+                                       width: selectIndicatorView.frame.width,
+                                       height: selectIndicatorView.frame.height * (CalendarCustom.designedTitleLabelHeight / CalendarCustom.designedCellHeight))
     }
 }
