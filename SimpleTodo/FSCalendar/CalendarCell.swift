@@ -10,6 +10,7 @@ import FSCalendar
 
 class CalendarCell: FSCalendarCell {
     weak var selectIndicatorView: UIView!
+    weak var eventIndicatorContainer: EventIndicatorContainer!
     
     var sizeRatio: Double = 0.85
     var cornerRatio: Double = 0.06538
@@ -35,6 +36,10 @@ class CalendarCell: FSCalendarCell {
         self.contentView.insertSubview(selectIndicatorView, at: 1)
         self.selectIndicatorView = selectIndicatorView
         
+        let eventIndicatorContainer = EventIndicatorContainer(frame: CGRectZero)
+        self.contentView.insertSubview(eventIndicatorContainer, aboveSubview: selectIndicatorView)
+        self.eventIndicatorContainer = eventIndicatorContainer
+        
         // 날짜 선택 시 나타나는 원형 효과 제거
         self.shapeLayer.isHidden = true
     }
@@ -53,5 +58,20 @@ class CalendarCell: FSCalendarCell {
                                        y: selectIndicatorView.frame.origin.y,
                                        width: selectIndicatorView.frame.width,
                                        height: selectIndicatorView.frame.height * (CalendarCustom.designedTitleLabelHeight / CalendarCustom.designedCellHeight))
+        
+        // 테스트 용
+        let dotCount = Int.random(in: 0...6)
+        let activeArr = Array(0..<dotCount)
+        setEventIndicator(activeArr: activeArr)
+    }
+    
+    func setEventIndicator(activeArr: [Int]) {
+        self.eventIndicatorContainer.setWith(activeArr: activeArr)
+        
+        let containerX = selectIndicatorView.frame.origin.x + (selectIndicatorView.frame.width - eventIndicatorContainer.frame.width)/2
+        let containerY = selectIndicatorView.frame.origin.y + (selectIndicatorView.frame.height * (CalendarCustom.designedEventIndicatorY / CalendarCustom.designedCellHeight))
+        eventIndicatorContainer.frame = CGRect(x: containerX, y: containerY,
+                                               width: eventIndicatorContainer.frame.width,
+                                               height: eventIndicatorContainer.frame.height)
     }
 }

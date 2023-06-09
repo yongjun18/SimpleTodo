@@ -14,6 +14,7 @@
 		D06BBBD92A305CD7006F35B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06BBBD82A305CD7006F35B1 /* ContentView.swift */; };
 		D06BBBDB2A305CD8006F35B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D06BBBDA2A305CD8006F35B1 /* Assets.xcassets */; };
 		D06BBBDE2A305CD8006F35B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D06BBBDD2A305CD8006F35B1 /* Preview Assets.xcassets */; };
+		D09F90DB2A3319F00065BF23 /* EventIndicatorContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09F90DA2A3319F00065BF23 /* EventIndicatorContainer.swift */; };
 		D0C443D42A319AC300D2F6BE /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C443D32A319AC300D2F6BE /* CalendarCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		D06BBBD82A305CD7006F35B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D06BBBDA2A305CD8006F35B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D06BBBDD2A305CD8006F35B1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D09F90DA2A3319F00065BF23 /* EventIndicatorContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventIndicatorContainer.swift; sourceTree = "<group>"; };
 		D0C443D32A319AC300D2F6BE /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				D0C443D32A319AC300D2F6BE /* CalendarCell.swift */,
+				D09F90DA2A3319F00065BF23 /* EventIndicatorContainer.swift */,
 			);
 			path = FSCalendar;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D09F90DB2A3319F00065BF23 /* EventIndicatorContainer.swift in Sources */,
 				D06BBBD92A305CD7006F35B1 /* ContentView.swift in Sources */,
 				D0144A3A2A306E56004A6457 /* CalendarView.swift in Sources */,
 				D06BBBD72A305CD7006F35B1 /* SimpleTodoApp.swift in Sources */,
