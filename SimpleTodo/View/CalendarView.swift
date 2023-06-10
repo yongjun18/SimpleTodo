@@ -34,7 +34,6 @@ struct CalendarViewRepresentable: UIViewRepresentable {
 
 struct CalendarView: View {
     var body: some View {
-        GeometryReader { proxy in
             VStack(spacing: 0) {
                 HStack {
                     Text("2023. 06")
@@ -61,10 +60,9 @@ struct CalendarView: View {
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0))
                 
                 CalendarViewRepresentable()
-                    .frame(width: proxy.size.width,
-                           height: CalendarCustom.computeCalendarHeight(width: proxy.size.width))
+                    .frame(width: UIScreen.main.bounds.width - CalendarCustom.viewSidePadding * 2,
+                           height: CalendarCustom.computeCalendarHeight(width: UIScreen.main.bounds.width - CalendarCustom.viewSidePadding * 2))
             }
-        }
     }
 }
 

@@ -10,7 +10,8 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         CalendarView()
-            .padding(EdgeInsets(top: 24, leading: 24, bottom: 0, trailing: 24))
+            .padding(EdgeInsets(top: 24, leading: CalendarCustom.viewSidePadding,
+                                bottom: 0, trailing: CalendarCustom.viewSidePadding))
         Spacer()
     }
 }
