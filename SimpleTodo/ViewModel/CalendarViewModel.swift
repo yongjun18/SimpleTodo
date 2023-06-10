@@ -60,7 +60,7 @@ class CalendarCustom {
     public static let designedCellWidth = 42.0          // 디자인 상의 cell width
     public static let designedTitleLabelHeight = 40.0   // 디자인 상의 title label height
     public static let designedEventIndicatorY = 32.0    // 디자인 상의 indicator y 좌표
-    public static let viewSidePadding = 24.0            // 캘린더 뷰 양 옆 패딩
+    public static let viewPadding = 24.0            // 캘린더 뷰 양 옆 패딩
     
     // 디자인 된 셀의 비율을 유지하기 위해, 세팅해야할 calendar height 계산
     static func computeCalendarHeight(width: Double) -> Double {
