@@ -38,6 +38,10 @@ class CalendarViewModel: NSObject, FSCalendarDelegate, FSCalendarDataSource {
             else {
                 calendarCell.selectIndicatorView.isHidden = true
             }
+            
+            // 테스트 용
+            let dotCount = Int.random(in: 0...6)
+            calendarCell.activeArr = Array(0..<dotCount)
         }
     }
     

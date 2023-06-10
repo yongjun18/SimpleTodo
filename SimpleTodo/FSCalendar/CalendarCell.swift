@@ -15,6 +15,7 @@ class CalendarCell: FSCalendarCell {
     var sizeRatio: Double = 0.85
     var cornerRatio: Double = 0.06538
     var shadowRatio: Double = 0.045
+    var activeArr: [Int] = []
  
     required init!(coder aDecoder: NSCoder!) {
         fatalError("init(coder:) has not been implemented")
@@ -55,14 +56,10 @@ class CalendarCell: FSCalendarCell {
                                        y: selectIndicatorView.frame.origin.y,
                                        width: selectIndicatorView.frame.width,
                                        height: selectIndicatorView.frame.height * (CalendarCustom.designedTitleLabelHeight / CalendarCustom.designedCellHeight))
-        
-        // 테스트 용
-        let dotCount = Int.random(in: 0...6)
-        let activeArr = Array(0..<dotCount)
-        setEventIndicator(activeArr: activeArr)
+        setEventIndicator()
     }
     
-    func setEventIndicator(activeArr: [Int]) {
+    func setEventIndicator() {
         self.eventIndicatorContainer.setWith(activeArr: activeArr)
         
         let containerX = selectIndicatorView.frame.origin.x + (selectIndicatorView.frame.width - eventIndicatorContainer.frame.width)/2
