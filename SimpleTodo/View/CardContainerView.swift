@@ -30,6 +30,8 @@ struct Card: View {
             .padding(EdgeInsets(top: 20, leading: 24, bottom: 0, trailing: 0))
             Spacer()
         }
+        .cornerRadius(9)
+        .shadow(color: Color(red: 134.0/255, green: 141.0/255, blue: 168.0/255, opacity: 0.25), radius: 4, x: 0, y: -1)
     }
 }
 
@@ -39,15 +41,20 @@ struct CardContainerView: View {
             ZStack {
                 Card(color: Color("EventColor1"), title: "운동 A", amount: 4, targetAmount: 24)
                     .frame(width: proxy.size.width * CardCustom.designedCardWidth / CardCustom.designedScreenWidth)
-                    .cornerRadius(9)
+                    .offset(x: -proxy.size.width * 66 / CardCustom.designedScreenWidth)
+                    .scaleEffect(0.79)
+                    .opacity(0.2)
+                    
                 
                 Card(color: Color("EventColor2"), title: "운동 B", amount: 4, targetAmount: 24)
                     .frame(width: proxy.size.width * CardCustom.designedCardWidth / CardCustom.designedScreenWidth)
-                    .cornerRadius(9)
+                    .offset(x: -proxy.size.width * 28 / CardCustom.designedScreenWidth)
+                    .scaleEffect(0.91)
+                    .opacity(0.5)
+                    
                 
                 Card(color: Color("EventColor3"), title: "운동 C", amount: 4, targetAmount: 24)
                     .frame(width: proxy.size.width * CardCustom.designedCardWidth / CardCustom.designedScreenWidth)
-                    .cornerRadius(9)
             }
             .frame(width: proxy.size.width)
         }
