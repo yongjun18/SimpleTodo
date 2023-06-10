@@ -9,9 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        CalendarView()
-            .padding(CalendarCustom.viewPadding)
-        Spacer()
+        VStack(spacing: 0) {
+            CalendarView()
+                .padding(CalendarCustom.viewPadding)
+            ZStack {
+                CardContainerView()
+            }
+            .padding(EdgeInsets(top: 24, leading: 0, bottom: 60, trailing: 0))
+        }
+        
     }
 }
 
