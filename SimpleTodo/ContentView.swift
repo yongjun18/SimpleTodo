@@ -17,7 +17,24 @@ struct ContentView: View {
             }
             .padding(EdgeInsets(top: 24, leading: 0, bottom: 60, trailing: 0))
         }
-        
+        .overlay(alignment: .bottomTrailing) {
+            ZStack {
+                Button(action: {
+                    
+                }, label:{
+                    ZStack {
+                        Color.black
+                        Image(systemName: "plus")
+                            .font(.system(size: 24))
+                            .frame(width: 48, height: 48)
+                            .foregroundColor(Color.white)
+                    }
+                    .frame(width: 48, height: 48)
+                    .cornerRadius(24)
+                })
+            }
+            .padding(EdgeInsets(top: 0, leading: 0, bottom: 24, trailing: 24))
+        }
     }
 }
 

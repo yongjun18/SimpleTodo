@@ -28,7 +28,6 @@ struct Card: View {
                     .font(.system(size: 14, weight: .semibold))
             }
             .padding(EdgeInsets(top: 20, leading: 24, bottom: 0, trailing: 0))
-            Spacer()
         }
         .cornerRadius(9)
         .shadow(color: Color(red: 134.0/255, green: 141.0/255, blue: 168.0/255, opacity: 0.25), radius: 4, x: 0, y: -1)
