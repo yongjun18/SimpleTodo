@@ -17,10 +17,14 @@ struct Card: View {
     var title: String
     var amount: Int
     var targetAmount: Int
+    var height: CGFloat
     
     var body: some View {
         ZStack(alignment: .topLeading) {
-            color
+            VStack(spacing: 0) {
+                Color.white.opacity(0)
+                color.frame(height: Double(Int(self.height) * amount) / Double(targetAmount))
+            }
             VStack(spacing: 5) {
                 Text(title)
                     .font(.system(size: 16, weight: .semibold))
@@ -38,21 +42,21 @@ struct CardContainerView: View {
     var body: some View {
         GeometryReader { proxy in
             ZStack {
-                Card(color: Color("EventColor1"), title: "운동 A", amount: 4, targetAmount: 24)
+                Card(color: Color("EventColor1"), title: "운동 A", amount: 24, targetAmount: 24, height: proxy.size.height)
                     .frame(width: proxy.size.width * CardCustom.designedCardWidth / CardCustom.designedScreenWidth)
                     .offset(x: -proxy.size.width * 66 / CardCustom.designedScreenWidth)
                     .scaleEffect(0.79)
                     .opacity(0.2)
                     
                 
-                Card(color: Color("EventColor2"), title: "운동 B", amount: 4, targetAmount: 24)
+                Card(color: Color("EventColor2"), title: "운동 B", amount: 24, targetAmount: 24, height: proxy.size.height)
                     .frame(width: proxy.size.width * CardCustom.designedCardWidth / CardCustom.designedScreenWidth)
                     .offset(x: -proxy.size.width * 28 / CardCustom.designedScreenWidth)
                     .scaleEffect(0.91)
                     .opacity(0.5)
                     
                 
-                Card(color: Color("EventColor3"), title: "운동 C", amount: 4, targetAmount: 24)
+                Card(color: Color("EventColor3"), title: "운동 C", amount: 20, targetAmount: 24, height: proxy.size.height)
                     .frame(width: proxy.size.width * CardCustom.designedCardWidth / CardCustom.designedScreenWidth)
             }
             .frame(width: proxy.size.width)
