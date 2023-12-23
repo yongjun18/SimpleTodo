@@ -52,9 +52,18 @@ class CalendarViewModel: NSObject, FSCalendarDelegate, FSCalendarDataSource, Obs
                 calendarCell.selectIndicatorView.isHidden = true
             }
             
-            // 테스트 용
-            let dotCount = Int.random(in: 0...6)
-            calendarCell.activeArr = Array(0..<dotCount)
+            // user defaults에서 해당 날짜의 이벤트 정보 가져옴
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyyMMdd"
+            
+            let eventCounts = UserDefaults.standard.array(forKey: dateFormatter.string(from: date)) as? [Int] ?? [Int]()
+            var activeArr = [Int]()
+            for i in 0..<eventCounts.count {
+                if eventCounts[i] > 0 {
+                    activeArr.append(i)
+                }
+            }
+            calendarCell.activeArr = activeArr
         }
     }
     
