@@ -9,9 +9,9 @@ import SwiftUI
 import FSCalendar
 
 struct CalendarViewRepresentable: UIViewRepresentable {
-    var calendarViewModel = CalendarViewModel()
+    @ObservedObject var calendarViewModel: CalendarViewModel
     
-    func makeUIView(context: Context) -> some UIView {
+    func makeUIView(context: Context) -> some FSCalendar {
         let calendar = FSCalendar()
         
         calendar.dataSource = calendarViewModel
@@ -28,11 +28,33 @@ struct CalendarViewRepresentable: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
+        if calendarViewModel.calendarModel.moveToNextMonthPage {
+            // 다음 달 페이지로 이동
+            Task {
+                await MainActor.run {
+                    let nextMonth = Calendar.current.date(byAdding: .month, value: 1, to: uiView.currentPage)
+                    uiView.setCurrentPage(nextMonth!, animated: true)
+                    calendarViewModel.calendarModel.moveToNextMonthPage = false
+                }
+            }
+        }
         
+        if calendarViewModel.calendarModel.moveToPrevMonthPage {
+            // 이전 달 페이지로 이동
+            Task {
+                await MainActor.run {
+                    let previousMonth = Calendar.current.date(byAdding: .month, value: -1, to: uiView.currentPage)
+                    uiView.setCurrentPage(previousMonth!, animated: true)
+                    calendarViewModel.calendarModel.moveToPrevMonthPage = false
+                }
+            }
+        }
     }
 }
 
 struct CalendarView: View {
+    @StateObject var calendarViewModel = CalendarViewModel()
+    
     var body: some View {
         VStack(spacing: 0) {
             HStack {
@@ -41,7 +63,7 @@ struct CalendarView: View {
                     .padding(EdgeInsets(top: 0, leading: 3, bottom: 0, trailing: 0))
                 Spacer()
                 Button(action: {
-                    
+                    calendarViewModel.calendarModel.moveToPrevMonthPage = true
                 }, label:{
                     Image(systemName: "chevron.left")
                         .font(.system(size: 16))
@@ -49,7 +71,7 @@ struct CalendarView: View {
                         .foregroundColor(Color.black)
                 })
                 Button(action: {
-                    
+                    calendarViewModel.calendarModel.moveToNextMonthPage = true
                 }, label:{
                     Image(systemName: "chevron.right")
                         .font(.system(size: 16))
@@ -59,7 +81,7 @@ struct CalendarView: View {
             }
             .padding(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0))
             
-            CalendarViewRepresentable()
+            CalendarViewRepresentable(calendarViewModel: calendarViewModel)
                 .frame(width: UIScreen.main.bounds.width - CalendarCustom.viewPadding * 2,
                        height: CalendarCustom.computeCalendarHeight(width: UIScreen.main.bounds.width - CalendarCustom.viewPadding * 2))
         }

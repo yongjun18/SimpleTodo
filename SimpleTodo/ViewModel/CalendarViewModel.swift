@@ -8,7 +8,18 @@
 import Foundation
 import FSCalendar
 
-class CalendarViewModel: NSObject, FSCalendarDelegate, FSCalendarDataSource {
+class CalendarViewModel: NSObject, FSCalendarDelegate, FSCalendarDataSource, ObservableObject {
+    @Published var calendarModel = CalendarModel()
+    
+    // 다음 달 페이지로 이동
+    func moveToNextMonthPage() {
+        calendarModel.moveToNextMonthPage = true
+    }
+    
+    // 이전 달 페이지로 이동
+    func moveToPrevMonthPage() {
+        calendarModel.moveToPrevMonthPage = true
+    }
     
     // MARK:- FSCalendarDelegate
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
