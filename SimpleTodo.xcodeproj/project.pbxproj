@@ -16,7 +16,6 @@
 		D06BBBDE2A305CD8006F35B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D06BBBDD2A305CD8006F35B1 /* Preview Assets.xcassets */; };
 		D09F90DB2A3319F00065BF23 /* EventIndicatorContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09F90DA2A3319F00065BF23 /* EventIndicatorContainer.swift */; };
 		D0C443D42A319AC300D2F6BE /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C443D32A319AC300D2F6BE /* CalendarCell.swift */; };
-		D0F54AF32A34BD59006FA391 /* CardContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F54AF22A34BD59006FA391 /* CardContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +31,6 @@
 		D06BBBDD2A305CD8006F35B1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D09F90DA2A3319F00065BF23 /* EventIndicatorContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventIndicatorContainer.swift; sourceTree = "<group>"; };
 		D0C443D32A319AC300D2F6BE /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
-		D0F54AF22A34BD59006FA391 /* CardContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				D0144A392A306E56004A6457 /* CalendarView.swift */,
-				D0F54AF22A34BD59006FA391 /* CardContainerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -257,7 +254,6 @@
 				D0144A3A2A306E56004A6457 /* CalendarView.swift in Sources */,
 				D06BBBD72A305CD7006F35B1 /* SimpleTodoApp.swift in Sources */,
 				D0144A3C2A306E80004A6457 /* CalendarViewModel.swift in Sources */,
-				D0F54AF32A34BD59006FA391 /* CardContainerView.swift in Sources */,
 				D0C443D42A319AC300D2F6BE /* CalendarCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
