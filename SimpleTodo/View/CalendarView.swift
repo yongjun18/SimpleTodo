@@ -24,6 +24,11 @@ struct CalendarViewRepresentable: UIViewRepresentable {
         
         CalendarCustom.custom(calendar)
         calendar.select(Date())
+        Task {
+            await MainActor.run {
+                calendarViewModel.setTodayMonthString(date: calendar.currentPage)
+            }
+        }
         return calendar
     }
     
@@ -58,7 +63,7 @@ struct CalendarView: View {
     var body: some View {
         VStack(spacing: 0) {
             HStack {
-                Text("2023. 06")
+                Text(calendarViewModel.calendarModel.todayMonthString)
                     .font(.system(size: 16, weight: .semibold))
                     .padding(EdgeInsets(top: 0, leading: 3, bottom: 0, trailing: 0))
                 Spacer()

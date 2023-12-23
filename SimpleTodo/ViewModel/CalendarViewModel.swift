@@ -21,6 +21,13 @@ class CalendarViewModel: NSObject, FSCalendarDelegate, FSCalendarDataSource, Obs
         calendarModel.moveToPrevMonthPage = true
     }
     
+    // todayMonthString 만들기
+    func setTodayMonthString(date: Date) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy. MM"
+        calendarModel.todayMonthString = dateFormatter.string(from: date)
+    }
+    
     // MARK:- FSCalendarDelegate
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         if let cell = calendar.cell(for: date, at: monthPosition) as? CalendarCell {
@@ -49,6 +56,10 @@ class CalendarViewModel: NSObject, FSCalendarDelegate, FSCalendarDataSource, Obs
             let dotCount = Int.random(in: 0...6)
             calendarCell.activeArr = Array(0..<dotCount)
         }
+    }
+    
+    func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
+        setTodayMonthString(date: calendar.currentPage)
     }
     
     // MARK:- FSCalendarDataSource
