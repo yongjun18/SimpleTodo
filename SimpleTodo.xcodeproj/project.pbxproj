@@ -16,6 +16,8 @@
 		D06BBBDE2A305CD8006F35B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D06BBBDD2A305CD8006F35B1 /* Preview Assets.xcassets */; };
 		D09F90DB2A3319F00065BF23 /* EventIndicatorContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09F90DA2A3319F00065BF23 /* EventIndicatorContainer.swift */; };
 		D0C443D42A319AC300D2F6BE /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C443D32A319AC300D2F6BE /* CalendarCell.swift */; };
+		D0D3EC092B36E29C006A37B1 /* CatContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D3EC082B36E29C006A37B1 /* CatContainerView.swift */; };
+		D0D3EC0D2B36E3B2006A37B1 /* CatButtonContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D3EC0C2B36E3B2006A37B1 /* CatButtonContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		D06BBBDD2A305CD8006F35B1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D09F90DA2A3319F00065BF23 /* EventIndicatorContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventIndicatorContainer.swift; sourceTree = "<group>"; };
 		D0C443D32A319AC300D2F6BE /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		D0D3EC082B36E29C006A37B1 /* CatContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatContainerView.swift; sourceTree = "<group>"; };
+		D0D3EC0C2B36E3B2006A37B1 /* CatButtonContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatButtonContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,13 +58,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		D0144A2D2A3060A5004A6457 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		D0144A2E2A3060AE004A6457 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +70,8 @@
 			isa = PBXGroup;
 			children = (
 				D0144A392A306E56004A6457 /* CalendarView.swift */,
+				D0D3EC082B36E29C006A37B1 /* CatContainerView.swift */,
+				D0D3EC0C2B36E3B2006A37B1 /* CatButtonContainerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -101,7 +100,7 @@
 				D0C443D22A319A7E00D2F6BE /* FSCalendar */,
 				D0144A2F2A3060BA004A6457 /* View */,
 				D0144A2E2A3060AE004A6457 /* ViewModel */,
-				D0144A2D2A3060A5004A6457 /* Model */,
+				D0D3EC052B36E1A4006A37B1 /* Model */,
 				D06BBBD62A305CD7006F35B1 /* SimpleTodoApp.swift */,
 				D06BBBD82A305CD7006F35B1 /* ContentView.swift */,
 				D06BBBDA2A305CD8006F35B1 /* Assets.xcassets */,
@@ -125,6 +124,13 @@
 				D09F90DA2A3319F00065BF23 /* EventIndicatorContainer.swift */,
 			);
 			path = FSCalendar;
+			sourceTree = "<group>";
+		};
+		D0D3EC052B36E1A4006A37B1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		DB8047AF92B138B776800FF7 /* Frameworks */ = {
@@ -250,11 +256,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D09F90DB2A3319F00065BF23 /* EventIndicatorContainer.swift in Sources */,
+				D0D3EC0D2B36E3B2006A37B1 /* CatButtonContainerView.swift in Sources */,
 				D06BBBD92A305CD7006F35B1 /* ContentView.swift in Sources */,
 				D0144A3A2A306E56004A6457 /* CalendarView.swift in Sources */,
 				D06BBBD72A305CD7006F35B1 /* SimpleTodoApp.swift in Sources */,
 				D0144A3C2A306E80004A6457 /* CalendarViewModel.swift in Sources */,
 				D0C443D42A319AC300D2F6BE /* CalendarCell.swift in Sources */,
+				D0D3EC092B36E29C006A37B1 /* CatContainerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

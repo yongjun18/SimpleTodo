@@ -12,9 +12,8 @@ struct ContentView: View {
         VStack(spacing: 0) {
             CalendarView()
                 .padding(CalendarCustom.viewPadding)
-            ZStack {
-                Color.white
-            }
+            CatContainerView()
+                .padding(EdgeInsets(top: 0, leading: CalendarCustom.viewPadding, bottom: 0, trailing: CalendarCustom.viewPadding))
         }
     }
 }
