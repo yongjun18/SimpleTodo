@@ -12,11 +12,6 @@ class CalendarViewModel: NSObject, FSCalendarDelegate, FSCalendarDataSource {
     
     // MARK:- FSCalendarDelegate
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        // 선택한 날짜가 이전 또는 다음 페이지라면, 해당 페이지로 이동
-        if monthPosition == .next || monthPosition == .previous {
-            calendar.setCurrentPage(date, animated: true)
-        }
-        
         if let cell = calendar.cell(for: date, at: monthPosition) as? CalendarCell {
             cell.selectIndicatorView.isHidden = false
         }
