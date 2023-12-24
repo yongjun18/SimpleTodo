@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var calendarViewModel = CalendarViewModel()
+    
     var body: some View {
         VStack(spacing: 0) {
-            CalendarView()
+            CalendarView(calendarViewModel: calendarViewModel)
                 .padding(CalendarCustom.viewPadding)
             CatContainerView()
                 .padding(EdgeInsets(top: 0, leading: CalendarCustom.viewPadding, bottom: 0, trailing: CalendarCustom.viewPadding))

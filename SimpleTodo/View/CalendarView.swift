@@ -58,7 +58,7 @@ struct CalendarViewRepresentable: UIViewRepresentable {
 }
 
 struct CalendarView: View {
-    @StateObject var calendarViewModel = CalendarViewModel()
+    @ObservedObject var calendarViewModel: CalendarViewModel
     
     var body: some View {
         VStack(spacing: 0) {
@@ -95,7 +95,7 @@ struct CalendarView: View {
 
 struct CalendarView_Previews: PreviewProvider {
     static var previews: some View {
-        CalendarView()
+        CalendarView(calendarViewModel: CalendarViewModel())
     }
 }
 

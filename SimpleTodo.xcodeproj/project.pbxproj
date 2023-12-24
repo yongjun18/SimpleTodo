@@ -71,6 +71,7 @@
 		D0144A2F2A3060BA004A6457 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D06BBBD82A305CD7006F35B1 /* ContentView.swift */,
 				D0144A392A306E56004A6457 /* CalendarView.swift */,
 				D0D3EC082B36E29C006A37B1 /* CatContainerView.swift */,
 				D0D3EC0C2B36E3B2006A37B1 /* CatButtonContainerView.swift */,
@@ -104,7 +105,6 @@
 				D0144A2E2A3060AE004A6457 /* ViewModel */,
 				D0D3EC052B36E1A4006A37B1 /* Model */,
 				D06BBBD62A305CD7006F35B1 /* SimpleTodoApp.swift */,
-				D06BBBD82A305CD7006F35B1 /* ContentView.swift */,
 				D06BBBDA2A305CD8006F35B1 /* Assets.xcassets */,
 				D06BBBDC2A305CD8006F35B1 /* Preview Content */,
 			);
