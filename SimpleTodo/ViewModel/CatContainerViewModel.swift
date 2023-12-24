@@ -8,7 +8,7 @@
 import Foundation
 
 class CatContainerViewModel: ObservableObject {
-    var catFootprintArr = [CatFootprint]()
+    @Published var catFootprintArr = [CatFootprint]()
     
     // 랜덤한 footprint 생성
     func addRandomFootprint(colorString: String) {

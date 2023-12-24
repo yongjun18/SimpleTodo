@@ -8,6 +8,8 @@
 import Foundation
 
 struct CatFootprint: Identifiable {
+    public static let size = 40.0
+    
     let id = UUID()
     var x: Double = 0.0
     var y: Double = 0.0
