@@ -14,7 +14,7 @@ struct ContentView: View {
         VStack(spacing: 0) {
             CalendarView(calendarViewModel: calendarViewModel)
                 .padding(CalendarCustom.viewPadding)
-            CatContainerView()
+            CatContainerView(calendarViewModel: calendarViewModel)
                 .padding(EdgeInsets(top: 0, leading: CalendarCustom.viewPadding, bottom: 0, trailing: CalendarCustom.viewPadding))
         }
     }

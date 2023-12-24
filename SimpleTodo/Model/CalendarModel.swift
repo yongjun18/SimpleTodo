@@ -12,4 +12,7 @@ struct CalendarModel {
     var moveToPrevMonthPage: Bool = false
     
     var todayMonthString: String = ""
+    
+    var eventCountArr: [Int] = [Int]()
+    var selectedDateString: String = ""
 }

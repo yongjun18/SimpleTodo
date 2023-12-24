@@ -33,6 +33,12 @@ class CalendarViewModel: NSObject, FSCalendarDelegate, FSCalendarDataSource, Obs
         if let cell = calendar.cell(for: date, at: monthPosition) as? CalendarCell {
             cell.selectIndicatorView.isHidden = false
         }
+        
+        // user defaults에서 선택된 날짜 이벤트 정보 가져옴
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd"
+        calendarModel.selectedDateString = dateFormatter.string(from: date)
+        calendarModel.eventCountArr = UserDefaults.standard.array(forKey: calendarModel.selectedDateString) as? [Int] ?? [Int]()
     }
     
     func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
@@ -56,10 +62,10 @@ class CalendarViewModel: NSObject, FSCalendarDelegate, FSCalendarDataSource, Obs
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyyMMdd"
             
-            let eventCounts = UserDefaults.standard.array(forKey: dateFormatter.string(from: date)) as? [Int] ?? [Int]()
+            let eventCountArr = UserDefaults.standard.array(forKey: dateFormatter.string(from: date)) as? [Int] ?? [Int]()
             var activeArr = [Int]()
-            for i in 0..<eventCounts.count {
-                if eventCounts[i] > 0 {
+            for i in 0..<eventCountArr.count {
+                if eventCountArr[i] > 0 {
                     activeArr.append(i)
                 }
             }

@@ -17,7 +17,6 @@
 		D09F90DB2A3319F00065BF23 /* EventIndicatorContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09F90DA2A3319F00065BF23 /* EventIndicatorContainer.swift */; };
 		D0C443D42A319AC300D2F6BE /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C443D32A319AC300D2F6BE /* CalendarCell.swift */; };
 		D0D3EC092B36E29C006A37B1 /* CatContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D3EC082B36E29C006A37B1 /* CatContainerView.swift */; };
-		D0D3EC0D2B36E3B2006A37B1 /* CatButtonContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D3EC0C2B36E3B2006A37B1 /* CatButtonContainerView.swift */; };
 		D0D3EC0F2B36E8B2006A37B1 /* CalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D3EC0E2B36E8B2006A37B1 /* CalendarModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,7 +34,6 @@
 		D09F90DA2A3319F00065BF23 /* EventIndicatorContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventIndicatorContainer.swift; sourceTree = "<group>"; };
 		D0C443D32A319AC300D2F6BE /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		D0D3EC082B36E29C006A37B1 /* CatContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatContainerView.swift; sourceTree = "<group>"; };
-		D0D3EC0C2B36E3B2006A37B1 /* CatButtonContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatButtonContainerView.swift; sourceTree = "<group>"; };
 		D0D3EC0E2B36E8B2006A37B1 /* CalendarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,7 +72,6 @@
 				D06BBBD82A305CD7006F35B1 /* ContentView.swift */,
 				D0144A392A306E56004A6457 /* CalendarView.swift */,
 				D0D3EC082B36E29C006A37B1 /* CatContainerView.swift */,
-				D0D3EC0C2B36E3B2006A37B1 /* CatButtonContainerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -260,7 +257,6 @@
 			files = (
 				D09F90DB2A3319F00065BF23 /* EventIndicatorContainer.swift in Sources */,
 				D0D3EC0F2B36E8B2006A37B1 /* CalendarModel.swift in Sources */,
-				D0D3EC0D2B36E3B2006A37B1 /* CatButtonContainerView.swift in Sources */,
 				D06BBBD92A305CD7006F35B1 /* ContentView.swift in Sources */,
 				D0144A3A2A306E56004A6457 /* CalendarView.swift in Sources */,
 				D06BBBD72A305CD7006F35B1 /* SimpleTodoApp.swift in Sources */,
