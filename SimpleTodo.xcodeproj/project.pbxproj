@@ -18,6 +18,8 @@
 		D0C443D42A319AC300D2F6BE /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C443D32A319AC300D2F6BE /* CalendarCell.swift */; };
 		D0D3EC092B36E29C006A37B1 /* CatContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D3EC082B36E29C006A37B1 /* CatContainerView.swift */; };
 		D0D3EC0F2B36E8B2006A37B1 /* CalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D3EC0E2B36E8B2006A37B1 /* CalendarModel.swift */; };
+		D0FF460D2B3835BB00968F75 /* CatContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF460C2B3835BB00968F75 /* CatContainerViewModel.swift */; };
+		D0FF460F2B3835E300968F75 /* CatContainerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF460E2B3835E300968F75 /* CatContainerModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		D0C443D32A319AC300D2F6BE /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		D0D3EC082B36E29C006A37B1 /* CatContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatContainerView.swift; sourceTree = "<group>"; };
 		D0D3EC0E2B36E8B2006A37B1 /* CalendarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarModel.swift; sourceTree = "<group>"; };
+		D0FF460C2B3835BB00968F75 /* CatContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatContainerViewModel.swift; sourceTree = "<group>"; };
+		D0FF460E2B3835E300968F75 /* CatContainerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatContainerModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				D0144A3B2A306E80004A6457 /* CalendarViewModel.swift */,
+				D0FF460C2B3835BB00968F75 /* CatContainerViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				D0D3EC0E2B36E8B2006A37B1 /* CalendarModel.swift */,
+				D0FF460E2B3835E300968F75 /* CatContainerModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -259,7 +265,9 @@
 				D0D3EC0F2B36E8B2006A37B1 /* CalendarModel.swift in Sources */,
 				D06BBBD92A305CD7006F35B1 /* ContentView.swift in Sources */,
 				D0144A3A2A306E56004A6457 /* CalendarView.swift in Sources */,
+				D0FF460D2B3835BB00968F75 /* CatContainerViewModel.swift in Sources */,
 				D06BBBD72A305CD7006F35B1 /* SimpleTodoApp.swift in Sources */,
+				D0FF460F2B3835E300968F75 /* CatContainerModel.swift in Sources */,
 				D0144A3C2A306E80004A6457 /* CalendarViewModel.swift in Sources */,
 				D0C443D42A319AC300D2F6BE /* CalendarCell.swift in Sources */,
 				D0D3EC092B36E29C006A37B1 /* CatContainerView.swift in Sources */,

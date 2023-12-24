@@ -9,14 +9,15 @@ import SwiftUI
 
 struct CatContainerView: View {
     @ObservedObject var calendarViewModel: CalendarViewModel
+    @StateObject var catContainerViewModel = CatContainerViewModel()
     
     var body: some View {
         VStack(spacing: 0) {
-            Color.white //TODO: CatScreenView 구현 및 적용
+            CatScreenView(catContainerViewModel: catContainerViewModel)
             
             HStack(spacing: 0) {
                 ForEach(0..<6) { i in
-                    CatButtonView(index: i, calendarViewModel: calendarViewModel)
+                    CatButtonView(index: i, calendarViewModel: calendarViewModel, catContainerViewModel: catContainerViewModel)
                 }
             }
         }
@@ -26,12 +27,14 @@ struct CatContainerView: View {
 struct CatButtonView: View {
     let index: Int
     @ObservedObject var calendarViewModel: CalendarViewModel
+    @ObservedObject var catContainerViewModel: CatContainerViewModel
     
     var body: some View {
         VStack {
             Spacer()
             Button(action: {
                 calendarViewModel.increaseCounter(index: index, diff: 1)
+                catContainerViewModel.addRandomFootprint(colorString: "EventColor\(index+1)")
             },label: {
                 ZStack {
                     Color.white
@@ -58,6 +61,19 @@ struct CatButtonView: View {
         .frame(maxWidth: .infinity)
     }
 }
+
+struct CatScreenView: View {
+    @ObservedObject var catContainerViewModel: CatContainerViewModel
+    
+    var body: some View {
+        GeometryReader { proxy in
+            ForEach(catContainerViewModel.catFootprintArr) { footprint in
+                
+            }
+        }
+    }
+}
+
 
 struct CatContainerView_Previews: PreviewProvider {
     static var previews: some View {
