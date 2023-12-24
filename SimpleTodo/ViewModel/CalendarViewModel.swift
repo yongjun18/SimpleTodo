@@ -21,6 +21,24 @@ class CalendarViewModel: NSObject, FSCalendarDelegate, FSCalendarDataSource, Obs
         calendarModel.moveToPrevMonthPage = true
     }
     
+    // index번째 카운터 값을 diff만큼 증가
+    func increaseCounter(index: Int, diff: Int) {
+        calendarModel.eventCountArr[index] += diff
+        
+        if calendarModel.eventCountArr[index] < 0 {
+            calendarModel.eventCountArr[index] = 0
+        }
+        if calendarModel.eventCountArr[index] > 999 {
+            calendarModel.eventCountArr[index] = 999
+        }
+        
+        // 변경된 값을 UserDefaults에 갱신
+        UserDefaults.standard.set(calendarModel.eventCountArr, forKey: calendarModel.selectedDateString)
+        
+        // calendar reload 필요
+        calendarModel.reloadPage = true
+    }
+    
     // todayMonthString 만들기
     func setTodayMonthString(date: Date) {
         let dateFormatter = DateFormatter()

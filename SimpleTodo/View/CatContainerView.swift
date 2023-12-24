@@ -31,7 +31,7 @@ struct CatButtonView: View {
         VStack {
             Spacer()
             Button(action: {
-                
+                calendarViewModel.increaseCounter(index: index, diff: 1)
             },label: {
                 ZStack {
                     Color.white
@@ -44,7 +44,7 @@ struct CatButtonView: View {
                 .shadow(color: Color(uiColor: .systemGray3), radius: 2)
             })
             Button(action: {
-                
+                calendarViewModel.increaseCounter(index: index, diff: -1)
             },label: {
                 VStack(spacing: 0) {
                     Text("\(calendarViewModel.calendarModel.eventCountArr[index])")

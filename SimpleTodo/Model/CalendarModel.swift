@@ -10,6 +10,7 @@ import Foundation
 struct CalendarModel {
     var moveToNextMonthPage: Bool = false
     var moveToPrevMonthPage: Bool = false
+    var reloadPage: Bool = false
     
     var todayMonthString: String = ""
     

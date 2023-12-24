@@ -54,6 +54,16 @@ struct CalendarViewRepresentable: UIViewRepresentable {
                 }
             }
         }
+        
+        if calendarViewModel.calendarModel.reloadPage {
+            // calendar reload 필요
+            Task {
+                await MainActor.run {
+                    uiView.reloadData()
+                    calendarViewModel.calendarModel.reloadPage = false
+                }
+            }
+        }
     }
 }
 
