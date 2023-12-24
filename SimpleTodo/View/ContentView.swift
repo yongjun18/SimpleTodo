@@ -13,9 +13,9 @@ struct ContentView: View {
     var body: some View {
         VStack(spacing: 0) {
             CalendarView(calendarViewModel: calendarViewModel)
-                .padding(CalendarCustom.viewPadding)
+                .padding(EdgeInsets(top: CalendarCustom.viewPadding, leading: CalendarCustom.viewPadding,
+                                    bottom: 0, trailing: CalendarCustom.viewPadding))
             CatContainerView(calendarViewModel: calendarViewModel)
-                .padding(EdgeInsets(top: 0, leading: CalendarCustom.viewPadding, bottom: 0, trailing: CalendarCustom.viewPadding))
         }
     }
 }

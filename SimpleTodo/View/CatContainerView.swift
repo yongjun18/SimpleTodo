@@ -20,6 +20,7 @@ struct CatContainerView: View {
                     CatButtonView(index: i, calendarViewModel: calendarViewModel, catContainerViewModel: catContainerViewModel)
                 }
             }
+            .padding(EdgeInsets(top: 10, leading: CalendarCustom.viewPadding, bottom: 0, trailing: CalendarCustom.viewPadding))
         }
     }
 }
@@ -31,7 +32,6 @@ struct CatButtonView: View {
     
     var body: some View {
         VStack {
-            Spacer()
             Button(action: {
                 calendarViewModel.increaseCounter(index: index, diff: 1)
                 catContainerViewModel.addRandomFootprint(colorString: "EventColor\(index+1)")
