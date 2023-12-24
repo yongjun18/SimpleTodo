@@ -38,7 +38,7 @@ class CalendarViewModel: NSObject, FSCalendarDelegate, FSCalendarDataSource, Obs
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyyMMdd"
         calendarModel.selectedDateString = dateFormatter.string(from: date)
-        calendarModel.eventCountArr = UserDefaults.standard.array(forKey: calendarModel.selectedDateString) as? [Int] ?? [Int]()
+        calendarModel.eventCountArr = UserDefaults.standard.array(forKey: calendarModel.selectedDateString) as? [Int] ?? [0, 0, 0, 0, 0, 0]
     }
     
     func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {

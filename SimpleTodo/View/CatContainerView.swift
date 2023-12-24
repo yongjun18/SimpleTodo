@@ -15,19 +15,16 @@ struct CatContainerView: View {
             Color.white //TODO: CatScreenView 구현 및 적용
             
             HStack(spacing: 0) {
-                CatButtonView(colorName: "EventColor1", calendarViewModel: calendarViewModel)
-                CatButtonView(colorName: "EventColor2", calendarViewModel: calendarViewModel)
-                CatButtonView(colorName: "EventColor3", calendarViewModel: calendarViewModel)
-                CatButtonView(colorName: "EventColor4", calendarViewModel: calendarViewModel)
-                CatButtonView(colorName: "EventColor5", calendarViewModel: calendarViewModel)
-                CatButtonView(colorName: "EventColor6", calendarViewModel: calendarViewModel)
+                ForEach(0..<6) { i in
+                    CatButtonView(index: i, calendarViewModel: calendarViewModel)
+                }
             }
         }
     }
 }
 
 struct CatButtonView: View {
-    let colorName: String
+    let index: Int
     @ObservedObject var calendarViewModel: CalendarViewModel
     
     var body: some View {
@@ -38,9 +35,9 @@ struct CatButtonView: View {
             },label: {
                 ZStack {
                     Color.white
-                    Image(systemName: "pawprint.fill")
+                    Image(systemName: calendarViewModel.calendarModel.eventCountArr[index] > 0 ? "pawprint.fill" : "pawprint")
                         .font(.system(size: 15))
-                        .foregroundColor(Color(uiColor: UIColor(named: colorName) ?? UIColor.white))
+                        .foregroundColor(Color(uiColor: UIColor(named: "EventColor\(index+1)") ?? UIColor.white))
                 }
                 .frame(width: 40, height: 40)
                 .cornerRadius(20)
@@ -50,7 +47,7 @@ struct CatButtonView: View {
                 
             },label: {
                 VStack(spacing: 0) {
-                    Text("0")
+                    Text("\(calendarViewModel.calendarModel.eventCountArr[index])")
                         .fontWeight(.light)
                         .foregroundColor(.gray)
                     Spacer().frame(height: 25)

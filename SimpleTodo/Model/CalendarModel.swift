@@ -13,6 +13,6 @@ struct CalendarModel {
     
     var todayMonthString: String = ""
     
-    var eventCountArr: [Int] = [Int]()
+    var eventCountArr: [Int] = [0, 0, 0, 0, 0, 0]
     var selectedDateString: String = ""
 }
