@@ -24,11 +24,6 @@ struct CalendarViewRepresentable: UIViewRepresentable {
         
         CalendarCustom.custom(calendar)
         calendar.select(Date())
-        Task {
-            await MainActor.run {
-                calendarViewModel.setTodayMonthString(date: calendar.currentPage)
-            }
-        }
         return calendar
     }
     
@@ -99,6 +94,9 @@ struct CalendarView: View {
             CalendarViewRepresentable(calendarViewModel: calendarViewModel)
                 .frame(width: UIScreen.main.bounds.width - CalendarCustom.viewPadding * 2,
                        height: CalendarCustom.computeCalendarHeight(width: UIScreen.main.bounds.width - CalendarCustom.viewPadding * 2))
+        }
+        .onAppear {
+            calendarViewModel.setTodayMonthString(date: Date())
         }
     }
 }
