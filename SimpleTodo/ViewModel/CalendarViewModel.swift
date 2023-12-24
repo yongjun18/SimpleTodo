@@ -39,6 +39,15 @@ class CalendarViewModel: NSObject, FSCalendarDelegate, FSCalendarDataSource, Obs
         calendarModel.reloadPage = true
     }
     
+    // selectedDateString, eventCountArr 세팅
+    func setSelectedDate(date: Date) {
+        // user defaults에서 선택된 날짜 이벤트 정보 가져옴
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd"
+        calendarModel.selectedDateString = dateFormatter.string(from: date)
+        calendarModel.eventCountArr = UserDefaults.standard.array(forKey: calendarModel.selectedDateString) as? [Int] ?? [0, 0, 0, 0, 0, 0]
+    }
+    
     // todayMonthString 만들기
     func setTodayMonthString(date: Date) {
         let dateFormatter = DateFormatter()
@@ -51,12 +60,7 @@ class CalendarViewModel: NSObject, FSCalendarDelegate, FSCalendarDataSource, Obs
         if let cell = calendar.cell(for: date, at: monthPosition) as? CalendarCell {
             cell.selectIndicatorView.isHidden = false
         }
-        
-        // user defaults에서 선택된 날짜 이벤트 정보 가져옴
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyyMMdd"
-        calendarModel.selectedDateString = dateFormatter.string(from: date)
-        calendarModel.eventCountArr = UserDefaults.standard.array(forKey: calendarModel.selectedDateString) as? [Int] ?? [0, 0, 0, 0, 0, 0]
+        setSelectedDate(date: date)
     }
     
     func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {

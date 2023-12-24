@@ -97,6 +97,7 @@ struct CalendarView: View {
         }
         .onAppear {
             calendarViewModel.setTodayMonthString(date: Date())
+            calendarViewModel.setSelectedDate(date: Date())
         }
     }
 }
