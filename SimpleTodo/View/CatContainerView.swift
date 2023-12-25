@@ -18,6 +18,7 @@ struct CatContainerView: View {
             HStack(spacing: 0) {
                 ForEach(0..<6) { i in
                     CatButtonView(index: i, calendarViewModel: calendarViewModel, catContainerViewModel: catContainerViewModel)
+                    if i+1 < 6 { Spacer() }
                 }
             }
             .padding(EdgeInsets(top: 10, leading: CalendarCustom.viewPadding, bottom: 0, trailing: CalendarCustom.viewPadding))
@@ -62,7 +63,6 @@ struct CatButtonView: View {
                 calendarViewModel.makeCounterZero(index: index)
             }
         }
-        .frame(maxWidth: .infinity)
     }
 }
 
