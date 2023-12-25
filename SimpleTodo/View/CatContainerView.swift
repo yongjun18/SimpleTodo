@@ -71,17 +71,15 @@ struct CatScreenView: View {
     
     var body: some View {
         GeometryReader { proxy in
-            ZStack {
-                ForEach(catContainerViewModel.catFootprintArr) { footprint in
-                    Image(systemName: "pawprint.fill")
-                        .font(.system(size: CatFootprint.size))
-                        .foregroundColor(Color(uiColor: UIColor(named: footprint.colorString) ?? UIColor.white))
-                        .rotationEffect(.radians(footprint.angle))
-                        .offset(
-                            x: (proxy.size.width - CatFootprint.size) * footprint.x,
-                            y: (proxy.size.height - CatFootprint.size) * footprint.y
-                        )
-                }
+            ForEach(catContainerViewModel.catFootprintArr) { footprint in
+                Image(systemName: "pawprint.fill")
+                    .font(.system(size: CatFootprint.size))
+                    .foregroundColor(Color(uiColor: UIColor(named: footprint.colorString) ?? UIColor.white))
+                    .rotationEffect(.radians(footprint.angle))
+                    .offset(
+                        x: (proxy.size.width - CatFootprint.size) * footprint.x,
+                        y: (proxy.size.height - CatFootprint.size) * footprint.y
+                    )
             }
         }
         .contentShape(Rectangle())
