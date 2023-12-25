@@ -20,8 +20,8 @@ class CatContainerViewModel: ObservableObject {
         
         catFootprintArr.append(newFootprint)
         
-        // 100개를 넘어서면, 제일 오래된 것 제거
-        if catFootprintArr.count > 100 {
+        // 최대 개수를 넘어서면, 제일 오래된 것 제거
+        if catFootprintArr.count > CatFootprint.maxNumber {
             catFootprintArr.remove(at: 0)
         }
     }
