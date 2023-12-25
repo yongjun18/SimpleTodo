@@ -39,6 +39,17 @@ class CalendarViewModel: NSObject, FSCalendarDelegate, FSCalendarDataSource, Obs
         calendarModel.reloadPage = true
     }
     
+    // index번째 카운터 값을 0로 만들기
+    func makeCounterZero(index: Int) {
+        calendarModel.eventCountArr[index] = 0
+        
+        // 변경된 값을 UserDefaults에 갱신
+        UserDefaults.standard.set(calendarModel.eventCountArr, forKey: calendarModel.selectedDateString)
+        
+        // calendar reload 필요
+        calendarModel.reloadPage = true
+    }
+    
     // selectedDateString, eventCountArr 세팅
     func setSelectedDate(date: Date) {
         // user defaults에서 선택된 날짜 이벤트 정보 가져옴

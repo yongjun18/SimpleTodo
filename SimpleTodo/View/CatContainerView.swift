@@ -46,17 +46,21 @@ struct CatButtonView: View {
                 .cornerRadius(20)
                 .shadow(color: Color(uiColor: .systemGray3), radius: 2)
             })
-            Button(action: {
-                calendarViewModel.increaseCounter(index: index, diff: -1)
-            },label: {
-                VStack(spacing: 0) {
-                    Text("\(calendarViewModel.calendarModel.eventCountArr[index])")
-                        .fontWeight(.light)
-                        .foregroundColor(.gray)
-                    Spacer().frame(height: 25)
-                }
-            })
             
+            // 발자국 아래 버튼 (onTap : 1감소 / onLongPress: 0로 만들기)
+            VStack(spacing: 0) {
+                Text("\(calendarViewModel.calendarModel.eventCountArr[index])")
+                    .fontWeight(.light)
+                    .foregroundColor(.gray)
+                Spacer().frame(height: 25)
+            }
+            .contentShape(Rectangle())
+            .onTapGesture {
+                calendarViewModel.increaseCounter(index: index, diff: -1)
+            }
+            .onLongPressGesture {
+                calendarViewModel.makeCounterZero(index: index)
+            }
         }
         .frame(maxWidth: .infinity)
     }
