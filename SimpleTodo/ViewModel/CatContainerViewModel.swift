@@ -25,4 +25,9 @@ class CatContainerViewModel: ObservableObject {
             catFootprintArr.remove(at: 0)
         }
     }
+    
+    // footprint 모두 제거
+    func removeAllFootprint() {
+        catFootprintArr.removeAll()
+    }
 }
