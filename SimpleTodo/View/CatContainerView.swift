@@ -71,6 +71,9 @@ struct CatScreenView: View {
     
     var body: some View {
         GeometryReader { proxy in
+            CatToolTipView()
+                .padding(EdgeInsets(top: 0, leading: CalendarCustom.viewPadding, bottom: 0, trailing: CalendarCustom.viewPadding))
+            
             ForEach(catContainerViewModel.catFootprintArr) { footprint in
                 Image(systemName: "pawprint.fill")
                     .font(.system(size: CatFootprint.size))
@@ -89,6 +92,39 @@ struct CatScreenView: View {
     }
 }
 
+struct CatToolTipView: View {
+    let toolTipColor = Color(uiColor: UIColor(red: 242.0/255.0, green: 120.0/255.0, blue: 182.0/255.0, alpha: 1.0))
+    
+    var body: some View {
+        VStack(alignment: .trailing, spacing: 0) {
+            Spacer()
+            
+            Text("버튼을 누르면 값이 올라가고\n숫자를 누르면 값이 내려가요!")
+                .padding(EdgeInsets(top: 10, leading: 15, bottom: 10, trailing: 15))
+                .background(toolTipColor)
+                .foregroundColor(.white)
+                .font(.system(size: 15))
+                .cornerRadius(5)
+            
+            InvertedTriangle()
+                .frame(width: 10, height: 15)
+                .foregroundColor(toolTipColor)
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 15))
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+    }
+}
+
+struct InvertedTriangle: Shape {
+    func path(in rect: CGRect) -> Path {
+            var path = Path()
+            path.move(to: CGPoint(x: rect.size.width, y: 0))
+            path.addLine(to: CGPoint(x: rect.size.width/2, y: rect.size.height))
+            path.addLine(to: CGPoint(x: 0, y: 0))
+            path.closeSubpath()
+            return path
+        }
+}
 
 struct CatContainerView_Previews: PreviewProvider {
     static var previews: some View {
