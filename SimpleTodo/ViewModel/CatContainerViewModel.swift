@@ -9,9 +9,14 @@ import Foundation
 
 class CatContainerViewModel: ObservableObject {
     @Published var catFootprintArr = [CatFootprint]()
+    @Published var catContainerModel = CatContainerModel()
     
     // 랜덤한 footprint 생성
     func addRandomFootprint(colorString: String) {
+        if catContainerModel.isTooltipShowing {
+            catContainerModel.isTooltipShowing = false
+        }
+        
         var newFootprint = CatFootprint()
         newFootprint.colorString = colorString
         newFootprint.x = Double.random(in: 0..<1)
@@ -29,5 +34,13 @@ class CatContainerViewModel: ObservableObject {
     // footprint 모두 제거
     func removeAllFootprint() {
         catFootprintArr.removeAll()
+    }
+    
+    // 앱의 첫 실행인지 확인
+    func checkAppBeforeLaunched() {
+        if UserDefaults.standard.bool(forKey: "appBeforeLaunched") == false {
+            catContainerModel.isTooltipShowing = true
+            UserDefaults.standard.set(true, forKey: "appBeforeLaunched")
+        }
     }
 }

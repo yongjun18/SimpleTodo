@@ -17,3 +17,7 @@ struct CatFootprint: Identifiable {
     var angle: Double = 0.0
     var colorString: String = ""
 }
+
+struct CatContainerModel {
+    var isTooltipShowing = false
+}

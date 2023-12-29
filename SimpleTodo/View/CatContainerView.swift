@@ -23,6 +23,9 @@ struct CatContainerView: View {
             }
             .padding(EdgeInsets(top: 10, leading: CalendarCustom.viewPadding, bottom: 0, trailing: CalendarCustom.viewPadding))
         }
+        .onAppear {
+            catContainerViewModel.checkAppBeforeLaunched()
+        }
     }
 }
 
@@ -71,8 +74,10 @@ struct CatScreenView: View {
     
     var body: some View {
         GeometryReader { proxy in
-            CatToolTipView()
-                .padding(EdgeInsets(top: 0, leading: CalendarCustom.viewPadding, bottom: 0, trailing: CalendarCustom.viewPadding))
+            if catContainerViewModel.catContainerModel.isTooltipShowing {
+                CatToolTipView()
+                    .padding(EdgeInsets(top: 0, leading: CalendarCustom.viewPadding, bottom: 0, trailing: CalendarCustom.viewPadding))
+            }
             
             ForEach(catContainerViewModel.catFootprintArr) { footprint in
                 Image(systemName: "pawprint.fill")
