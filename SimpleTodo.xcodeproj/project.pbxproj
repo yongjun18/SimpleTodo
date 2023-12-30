@@ -10,6 +10,7 @@
 		580A8DA6297BD9D48DAD4937 /* Pods_SimpleTodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 746E4DD8C45F1D62EBD37408 /* Pods_SimpleTodo.framework */; };
 		D0144A3A2A306E56004A6457 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0144A392A306E56004A6457 /* CalendarView.swift */; };
 		D0144A3C2A306E80004A6457 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0144A3B2A306E80004A6457 /* CalendarViewModel.swift */; };
+		D02BF5292B3FC9DD00627940 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02BF5282B3FC9DD00627940 /* LaunchScreen.storyboard */; };
 		D06BBBD72A305CD7006F35B1 /* SimpleTodoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06BBBD62A305CD7006F35B1 /* SimpleTodoApp.swift */; };
 		D06BBBD92A305CD7006F35B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06BBBD82A305CD7006F35B1 /* ContentView.swift */; };
 		D06BBBDB2A305CD8006F35B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D06BBBDA2A305CD8006F35B1 /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 		746E4DD8C45F1D62EBD37408 /* Pods_SimpleTodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleTodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0144A392A306E56004A6457 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		D0144A3B2A306E80004A6457 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		D02BF5282B3FC9DD00627940 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D06BBBD32A305CD7006F35B1 /* SimpleTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D06BBBD62A305CD7006F35B1 /* SimpleTodoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTodoApp.swift; sourceTree = "<group>"; };
 		D06BBBD82A305CD7006F35B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				D06BBBD62A305CD7006F35B1 /* SimpleTodoApp.swift */,
 				D06BBBDA2A305CD8006F35B1 /* Assets.xcassets */,
 				D06BBBDC2A305CD8006F35B1 /* Preview Content */,
+				D02BF5282B3FC9DD00627940 /* LaunchScreen.storyboard */,
 			);
 			path = SimpleTodo;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D02BF5292B3FC9DD00627940 /* LaunchScreen.storyboard in Resources */,
 				D06BBBDE2A305CD8006F35B1 /* Preview Assets.xcassets in Resources */,
 				D06BBBDB2A305CD8006F35B1 /* Assets.xcassets in Resources */,
 			);
@@ -407,7 +411,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "꾹꾹이 일지";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -441,7 +445,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "꾹꾹이 일지";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
